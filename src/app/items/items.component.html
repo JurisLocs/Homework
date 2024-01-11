@@ -1,0 +1,5 @@
+<button (click)="addItem('New Item')">Add Item</button>
+<div *ngFor="let item of items; let i = index">
+  {{ item }}
+  <button (click)="removeItem(i)">Remove</button>
+</div>

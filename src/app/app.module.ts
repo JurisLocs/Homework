@@ -3,14 +3,19 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { StoreModule } from '@ngrx/store';
+import { itemsReducer } from './state/app.reducer';
+import { ItemsComponent } from './items/items.component'; 
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    ItemsComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    StoreModule.forRoot({items: itemsReducer}, {})
   ],
   providers: [],
   bootstrap: [AppComponent]
